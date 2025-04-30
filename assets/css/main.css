@@ -357,7 +357,8 @@ svg path {
   --rr-color-white: #fff;
   --rr-color-white-70: rgba(255, 255, 255, 0.3);
   --rr-body-primary: #ffffff;
-  --rr-theme-primary: #F44E19;
+  --rr-theme-primary: #E0A528;
+  /* --rr-theme-primary: #F44E19; */
   --rr-heading-primary: #15181B;
   --rr-text-body: #6A6A6A;
   --rr-text-p: #6A6A6A;
@@ -918,7 +919,7 @@ a:hover {
   z-index: 99999999;
   font-size: 26px;
   color: var(--rr-common-white);
-  background: #F44E19;
+  background: #E0A528;
   width: 40px;
   height: 40px;
   line-height: 36px;
@@ -954,7 +955,7 @@ a:hover {
           transform: translateY(-50%);
   width: 20px;
   height: 20px;
-  background-color: #F44E19;
+  background-color: #E0A528;
   border-radius: 100%;
   display: inline-block;
   -webkit-animation: sk-three-bounce 1.4s ease-in-out 0s infinite both;
@@ -8427,8 +8428,8 @@ body .ui-tooltip {
   }
 }
 .why-choose-us-2__item:hover {
-  -webkit-box-shadow: 0px 20px 40px rgba(21, 24, 27, 0.06), inset 0px -4px 0px #F44E19;
-          box-shadow: 0px 20px 40px rgba(21, 24, 27, 0.06), inset 0px -4px 0px #F44E19;
+  -webkit-box-shadow: 0px 20px 40px rgba(21, 24, 27, 0.06), inset 0px -4px 0px #E0A528;
+          box-shadow: 0px 20px 40px rgba(21, 24, 27, 0.06), inset 0px -4px 0px #E0A528;
 }
 .why-choose-us-2__item:hover .why-choose-us-2__icon svg [fill="#15181B"] {
   fill: var(--rr-theme-primary);
@@ -9583,4 +9584,12 @@ html[dir="rtl"] {
 [dir="rtl"] html,
 [dir="rtl"] body {
   text-align: right;
+}
+
+.svg-icon {
+  width: 50px;
+  height: 50px;
+}
+h1,h2,h3,h4,h5,h6 {
+  color: #2C2178;
 }
