@@ -264,8 +264,8 @@
     }
 
     /*======================================
-      Preloader activation with multiple
-     ========================================*/
+    Preloader activation with multiple
+    ========================================*/
     const preloaders = $("[data-preloader]");
     preloaders.each(function(index, item) {
         if($(item).data('preloader') === 'active') {
@@ -285,8 +285,8 @@
     });
 
     /*======================================
-      Mobile Menu Js
-      ========================================*/
+    Mobile Menu Js
+    ========================================*/
     $("#mobile-menu").meanmenu({
         meanMenuContainer: ".mobile-menu",
         meanScreenWidth: "1199",
@@ -294,8 +294,8 @@
     });
 
     /*======================================
-      Sidebar Toggle
-      ========================================*/
+    Sidebar Toggle
+    ========================================*/
     $(".offcanvas__close,.offcanvas__overlay").on("click", function () {
         $(".offcanvas__area").removeClass("info-open");
         $(".offcanvas__overlay").removeClass("overlay-open");
@@ -313,51 +313,12 @@
     });
 
     /*======================================
-      Body overlay Js
-      ========================================*/
+    Body overlay Js
+    ========================================*/
     $(".body-overlay").on("click", function () {
         $(".offcanvas__area").removeClass("opened");
         $(".body-overlay").removeClass("opened");
     });
-
-    /*======================================
-    Page Scroll Percentage
-    ========================================*/
-    const scrollTopPercentage = ()=> {
-        const scrollPercentage = () => {
-            const scrollTopPos = document.documentElement.scrollTop;
-            const calcHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrollValue = Math.round((scrollTopPos / calcHeight) * 100);
-            const scrollElementWrap = $("#scroll-percentage");
-
-            scrollElementWrap.css("background", `conic-gradient( var(--rr-theme-primary) ${scrollValue}%, var(--rr-heading-primary) ${scrollValue}%)`);
-
-            if ( scrollTopPos > 100 ) {
-                scrollElementWrap.addClass("active");
-            } else {
-                scrollElementWrap.removeClass("active");
-            }
-
-            if( scrollValue < 96 ) {
-                $("#scroll-percentage-value").text(`${scrollValue}%`);
-            } else {
-                $("#scroll-percentage-value").html('<i class="fa-solid fa-angle-up"></i>');
-            }
-        }
-        window.onscroll = scrollPercentage;
-        window.onload = scrollPercentage;
-
-        // Back to Top
-        function scrollToTop() {
-            document.documentElement.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
-        }
-
-        $("#scroll-percentage").on("click", scrollToTop);
-    }
-    scrollTopPercentage();
 
     /*======================================
 	Smoth animatio Js
@@ -574,7 +535,6 @@
         var $grid = $('.grid').isotope({
             itemSelector: '.grid-item',
         });
-
         $('.masonary-menu').on('click', 'button', function () {
             var filterValue = $(this).attr('data-filter');
             $grid.isotope({ filter: filterValue });
@@ -632,14 +592,13 @@
                 this.update();
             },
         };
-
         var swiper = new Swiper(".banner-2__slider", sliderOptions);
-        
     });
 })(jQuery);
 
-const form = document.getElementById('request-a-quote__form');
 
+
+const form = document.getElementById('request-a-quote__form');
 if(form) {
     form.addEventListener('submit', (event) => {
         event.preventDefault(); 
