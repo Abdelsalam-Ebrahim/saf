@@ -638,22 +638,26 @@
     });
 })(jQuery);
 
-document.querySelector('.contact-form').addEventListener('submit', function(event) {
-    event.preventDefault(); 
+const form = document.getElementById('request-a-quote__form');
 
-    const button = document.querySelector('.rr-btn .btn-wrap');
-    const originalText = button.innerHTML;
-    const successMessage = document.getElementById('success-message');
-
-    button.innerHTML = `<span class="spinner-border" role="status" aria-hidden="true"></span>`;
-
-    setTimeout(() => {
-        button.innerHTML = originalText;
-        successMessage.style.display = "block";
-        document.querySelector('.contact-form').reset();
-        
+if(form) {
+    form.addEventListener('submit', (event) => {
+        event.preventDefault(); 
+    
+        const button = document.querySelector('.rr-btn .btn-wrap');
+        const originalText = button.innerHTML;
+        const successMessage = document.getElementById('success-message');
+    
+        button.innerHTML = `<span class="spinner-border" role="status" aria-hidden="true"></span>`;
+    
         setTimeout(() => {
-            successMessage.style.display = "none";
+            button.innerHTML = originalText;
+            successMessage.style.display = "block";
+            form.reset();
+            
+            setTimeout(() => {
+                successMessage.style.display = "none";
+            }, 3000);
         }, 3000);
-    }, 3000);
-});
+    });
+}
