@@ -2,18 +2,6 @@
 (function ($) {
     "use strict";
     var windowOn = $(window);
-
-    /*-----------------------------------------------------------------------------------
-        Template Name: Ribuild - Construction Company HTML5 Template
-        Author: RRDevs
-        Support: https://support.rrdevs.net
-        Description: Ribuild - Construction Company HTML5 Template.
-        Version: 1.0
-        Developer Github: Sabbir Ahmmed (https://github.com/ahmmedsabbirbd)
-	    Developer Linkedin: Sabbir Ahmmed (https://www.linkedin.com/in/ahmmedsabbirbd)
-    -----------------------------------------------------------------------------------
-
-     */
    /*======================================
    Data Css js
    ========================================*/
@@ -173,7 +161,8 @@
                     animateClass: 'animated',
                     offset: 0,
                     mobile: false,
-                    live: true
+                    // live: true,
+                    live: false,
                 });
                 wow.init();
             }
@@ -332,36 +321,8 @@
     });
 
     /*======================================
-      Sticky Header Js
-      ========================================*/
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 10) {
-            $("#header-sticky").addClass("rr-sticky");
-        } else {
-            $("#header-sticky").removeClass("rr-sticky");
-        }
-    });
-
-    /*======================================
-      MagnificPopup image view
-      ========================================*/
-    $(".popup-image").magnificPopup({
-        type: "image",
-        gallery: {
-            enabled: true,
-        },
-    });
-
-    /*======================================
-      MagnificPopup video view
-      ========================================*/
-    $(".popup-video").magnificPopup({
-        type: "iframe",
-    });
-
-    /*======================================
-      Page Scroll Percentage
-      ========================================*/
+    Page Scroll Percentage
+    ========================================*/
     const scrollTopPercentage = ()=> {
         const scrollPercentage = () => {
             const scrollTopPos = document.documentElement.scrollTop;
@@ -399,36 +360,6 @@
     scrollTopPercentage();
 
     /*======================================
-	One Page Scroll Js
-	========================================*/
-    var link = $('.onepagenav #mobile-menu ul li a, .onepagenav .mean-nav ul li a');
-    link.on('click', function(e) {
-        var target = $($(this).attr('href'));
-        $('html, body').animate({
-            scrollTop: target.offset().top - 76
-        }, 600);
-        $(this).parent().addClass('active');
-        e.preventDefault();
-    });
-    $(window).on('scroll', function(){
-        scrNav();
-    });
-
-    function scrNav() {
-        var sTop = $(window).scrollTop();
-        $('section').each(function() {
-            var id = $(this).attr('id'),
-                offset = $(this).offset().top-1,
-                height = $(this).height();
-            if(sTop >= offset && sTop < offset + height) {
-                link.parent().removeClass('active');
-                $('.main-menu').find('[href="#' + id + '"]').parent().addClass('active');
-            }
-        });
-    }
-    scrNav();
-
-    /*======================================
 	Smoth animatio Js
 	========================================*/
     $(document).on('click', '.smoth-animation', function (event) {
@@ -436,66 +367,6 @@
         $('html, body').animate({
             scrollTop: $($.attr(this, 'href')).offset().top - 50
         }, 300);
-    });
-
-
-    /*clients-testimonial__slider***/
-    let clients_testimonial__slider = new Swiper(".clients-testimonial__slider", {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        loop: true,
-        centeredSlides: true,
-        clickable: true,
-        autoplay: {
-            delay: 3000,
-        },
-        navigation: {
-            prevEl: ".clients-testimonial__slider__arrow-prev",
-            nextEl: ".clients-testimonial__slider__arrow-next",
-        }
-    });
-
-    /*testimonial__slider***/
-    let testimonial__slider = new Swiper(".testimonial__slider", {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        loop: true,
-        centeredSlides: true,
-        clickable: true,
-        autoplay: {
-            delay: 3000,
-        },
-        navigation: {
-            prevEl: ".testimonial__slider__arrow-prev",
-            nextEl: ".testimonial__slider__arrow-next",
-        }
-    });
-
-    /*testimonial-2__slider***/
-    let testimonial2slider = new Swiper(".testimonial-2__slider", {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        loop: true,
-        centeredSlides: true,
-        clickable: true,
-        autoplay: {
-            delay: 3000,
-        },
-        navigation: {
-            prevEl: ".testimonial-2__slider__arrow-prev",
-            nextEl: ".testimonial-2__slider__arrow-next",
-        },
-        breakpoints: {
-            1401: {
-                slidesPerView: 3,
-            },
-            992: {
-                slidesPerView: 2,
-            },
-            0: {
-                slidesPerView: 1,
-            },
-        },
     });
 
     if ($(".count-bar").length) {
@@ -511,13 +382,6 @@
     }
 
     $('.live-comment-widget__form-input-select select, .contact-us-message__form-input-select select, .get-in-touch__form-input-select select, .banner-3__form-input-select select, .contact__form-input-select select').niceSelect();
-
-    $(".search-open-btn").on("click", function () {
-        $(".search__popup").addClass("search-opened");
-    });
-    $(".search-close-btn").on("click", function () {
-        $(".search__popup").removeClass("search-opened");
-    });
 
     /*brand__active***/
     let brand = new Swiper(".brand__active", {
@@ -552,56 +416,6 @@
         },
     });
 
-    /*blog__slider***/
-    let doctor__slider = new Swiper(".blog__slider", {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        centeredSlides: true,
-        navigation: {
-            prevEl: ".blog__slider__arrow-prev",
-            nextEl: ".blog__slider__arrow-next",
-        },
-        loop: true,
-        clickable: true,
-        autoplay: {
-            delay: 3000,
-        },
-        breakpoints: {
-            1200: {
-                slidesPerView: 3,
-            },
-            768: {
-                slidesPerView: 2,
-            },
-            0: {
-                slidesPerView: 1,
-            },
-        },
-    });
-
-    /*blog__slider***/
-    let blog__slider2 = new Swiper(".blog-2__slider", {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        loop: true,
-        clickable: true,
-        pagination: {
-            el: ".blog-2__slider-dot",
-            clickable: true,
-        },
-        autoplay: {
-            delay: 3000,
-        },
-        breakpoints: {
-            1200: {
-                slidesPerView: 2,
-            },
-            0: {
-                slidesPerView: 1,
-            },
-        },
-    });
-
     function lastNobullet() {
         $(".last_no_bullet ul").each(function() {
             var $listItems = $(this).find("li");
@@ -617,67 +431,8 @@
     $(window).resize(function() {
         lastNobullet();
     });
- 
+
     $('.carouselTicker-nav').carouselTicker({});
-
-    /*** pricing table2 */
-    const pricingMonthlyBtn = $("#monthly-btn"),
-        pricingYearlyBtn = $("#yearly-btn"),
-        pricingValues = $(".pricing-2__card-price h2, .yearly p");
-
-    if (pricingMonthlyBtn[0] && pricingYearlyBtn[0] && pricingValues.length > 0) {
-        pricingMonthlyBtn[0].addEventListener("click", function () {
-            updatePricingValuestop("monthly");
-            pricingYearlyBtn[0].classList.remove("active");
-            pricingMonthlyBtn[0].classList.add("active");
-        });
-
-        pricingYearlyBtn[0].addEventListener("click", function () {
-            updatePricingValuestop("yearly");
-            pricingMonthlyBtn[0].classList.remove("active");
-            pricingYearlyBtn[0].classList.add("active");
-        });
-    }
-
-    function updatePricingValuestop(option) {
-        pricingValues.each(function () {
-            const pricingValue = $(this);
-            const yearlyValue = pricingValue.attr("data-yearly");
-            const monthlyValue = pricingValue.attr("data-monthly");
-
-            const newValue = option === "monthly" ? monthlyValue : yearlyValue;
-            pricingValue.html(newValue);
-        });
-    }
-
-    /*** pricing table 1 */
-    const pricingSwitch = $("#switcher"),
-        pricingValues1 = $(".pricing__card-price h2");
-
-    if (pricingSwitch[0] && pricingValues1.length > 0) {
-        pricingSwitch[0].addEventListener("change", function () {
-            if (pricingSwitch[0].checked) {
-                updatePricingValues("yearly");
-                $("#yearly-btn").addClass("active");
-                $("#monthly-btn").removeClass("active");
-            } else {
-                updatePricingValues("monthly");
-                $("#monthly-btn").addClass("active");
-                $("#yearly-btn").removeClass("active");
-            }
-        });
-    }
-
-    function updatePricingValues(option) {
-        pricingValues1.each(function () {
-            const pricingValue = $(this);
-            const yearlyValue = pricingValue.attr("data-yearly");
-            const monthlyValue = pricingValue.attr("data-monthly");
-
-            const newValue = option === "monthly" ? monthlyValue : yearlyValue;
-            pricingValue.html(newValue);
-        });
-    }
 
     class MagneticButton {
         constructor(options) {
@@ -764,11 +519,7 @@
         slidesPerView: '1',
         centeredSlides: true,
         loop: true,
-        loopedSlides: 6,
-        navigation: {
-            prevEl: ".banner__slider__arrow-prev",
-            nextEl: ".banner__slider__arrow-next",
-        },
+        loopedSlides: 3,
         autoplay: {
             delay: 5000,
             disableOnInteraction: false,
@@ -776,14 +527,6 @@
         pagination: {
             el: ".swiper-pagination",
             type: "fraction",
-        },
-        on: {
-            slideChange: ()=> {
-                document.querySelector('.timer-swiperAfter').classList.remove('active');
-                setTimeout(() => {
-                    document.querySelector('.timer-swiperAfter').classList.add('active');
-                }, 50);
-            },
         },
     });
 
@@ -797,8 +540,6 @@
             nextEl: ".project-details__media__slider__arrow-next",
         },
     });
-
-
 
     let ourProject = new Swiper ('.our-project__slider', {
         slidesPerView: 1,
@@ -844,7 +585,6 @@
             event.preventDefault();
         });
     });
-
 
     $(document).ready(function () {
         function sliderAnimations(elements) {
@@ -897,3 +637,23 @@
         
     });
 })(jQuery);
+
+document.querySelector('.contact-form').addEventListener('submit', function(event) {
+    event.preventDefault(); 
+
+    const button = document.querySelector('.rr-btn .btn-wrap');
+    const originalText = button.innerHTML;
+    const successMessage = document.getElementById('success-message');
+
+    button.innerHTML = `<span class="spinner-border" role="status" aria-hidden="true"></span>`;
+
+    setTimeout(() => {
+        button.innerHTML = originalText;
+        successMessage.style.display = "block";
+        document.querySelector('.contact-form').reset();
+        
+        setTimeout(() => {
+            successMessage.style.display = "none";
+        }, 3000);
+    }, 3000);
+});
