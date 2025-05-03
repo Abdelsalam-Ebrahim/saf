@@ -3190,6 +3190,13 @@ a:hover {
     transform: none !important;
   }
 }
+@media (max-width: 767px) {
+  .title-animation {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+}
 
 .riduild-fadeInUp {
   -webkit-animation-name: asfadeInUp;
