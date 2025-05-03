@@ -393,8 +393,6 @@
         lastNobullet();
     });
 
-    $('.carouselTicker-nav').carouselTicker({});
-
     class MagneticButton {
         constructor(options) {
             this.settings = $.extend({
