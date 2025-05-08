@@ -619,3 +619,23 @@ if(form) {
         }, 3000);
     });
 }
+
+function checkScreenWidth() {
+    const titleElement = document.querySelectorAll('.title-animation');
+
+    if (window.innerWidth < 997) {
+        if (titleElement) {
+            titleElement.forEach((element) => {
+                element.classList.remove('title-animation');
+            });
+        }
+    } else {
+        titleElement.forEach((element) => {
+            if (!element.classList.contains('title-animation')) {
+                element.classList.add('title-animation'); 
+            }
+        });
+    }
+}
+
+document.addEventListener('DOMContentLoaded', checkScreenWidth);

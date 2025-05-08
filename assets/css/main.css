@@ -3183,20 +3183,6 @@ a:hover {
   -webkit-animation-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
           animation-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
-@media (max-width: 767px) {
-  .clip-a-z {
-    animation: none !important;
-    opacity: 1 !important;
-    transform: none !important;
-  }
-}
-@media (max-width: 767px) {
-  .title-animation {
-    opacity: 1 !important;
-    transform: none !important;
-    animation: none !important;
-  }
-}
 
 .riduild-fadeInUp {
   -webkit-animation-name: asfadeInUp;
